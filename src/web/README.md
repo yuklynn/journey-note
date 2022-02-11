@@ -1,4 +1,4 @@
-# journey-note
+# app
 
 ## Project setup
 ```
