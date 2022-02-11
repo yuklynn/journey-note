@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app clipped-left flat color="primary">
+  <v-app-bar app clipped-left clipped-right flat color="primary">
     <v-toolbar-title class="white--text font-weight-bold">
       {{ title }}
     </v-toolbar-title>
