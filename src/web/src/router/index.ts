@@ -12,6 +12,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/note/:id',
     name: 'Note',
+    props: true,
     component: () => import(/* webpackChunkName: "note" */ '../views/Note.vue'),
   },
   {
