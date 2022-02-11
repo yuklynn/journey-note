@@ -1,5 +1,5 @@
 <template>
-  <v-main />
+  <div>ほーむ</div>
 </template>
 
 <script lang="ts">
