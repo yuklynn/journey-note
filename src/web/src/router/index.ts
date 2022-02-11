@@ -5,9 +5,33 @@ Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
+  },
+  {
+    path: '/notification',
+    name: 'Notification',
+    component: () =>
+      import(
+        /* webpackChunkName: "notification" */ '../views/Notification.vue'
+      ),
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: () =>
+      import(/* webpackChunkName: "profile" */ '../views/Profile.vue'),
+  },
+  {
+    path: '/setting',
+    name: 'Setting',
+    component: () =>
+      import(/* webpackChunkName: "setting" */ '../views/Setting.vue'),
+  },
+  {
+    path: '/',
+    redirect: '/home',
   },
 ];
 
