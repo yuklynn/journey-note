@@ -81,8 +81,7 @@ export default defineComponent({
     const onClick = () => {
       router.push({
         name: 'Note', // 名前も指定しないとparamsが渡らない
-        path: `/note/${props.item.id}`,
-        params: { data: JSON.stringify(props.item) },
+        params: { id: props.item.id, data: JSON.stringify(props.item) },
       });
     };
 
