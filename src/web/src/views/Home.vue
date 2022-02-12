@@ -1,23 +1,27 @@
 <template>
-  <v-container>
-    <search-bar />
-    <v-row>
-      <v-col sm="12" md="6" lg="6" v-for="i of 200" :key="i">
-        <note-list-item :class="{ 'mb-4': i != 200 }" :item="note" />
-      </v-col>
-    </v-row>
-    <v-list> </v-list>
-  </v-container>
+  <div>
+    <v-container>
+      <search-bar />
+      <v-row>
+        <v-col sm="12" md="6" lg="6" v-for="i of 200" :key="i">
+          <note-list-item :class="{ 'mb-4': i != 200 }" :item="note" />
+        </v-col>
+      </v-row>
+      <v-list> </v-list>
+    </v-container>
+    <home-recommends />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
 import SearchBar from '@/components/com/SearchBar.vue';
+import HomeRecommends from '@/components/home/HomeRecommends.vue';
 import NoteListItem from '@/components/note/NoteListItem.vue';
 import { NoteType } from '@/types/NoteType';
 
 export default defineComponent({
-  components: { SearchBar, NoteListItem },
+  components: { SearchBar, HomeRecommends, NoteListItem },
   setup() {
     // todo: 後で消す
     const note: NoteType = {
