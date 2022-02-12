@@ -22,12 +22,12 @@
     <v-card-subtitle>
       <v-layout align-center>
         <div class="d-flex align-center flex-0 user">
-          <v-avatar class="account-icon" size="32">
+          <v-avatar size="32">
             <v-img src="../../../assets/1633531004910.jpg" />
           </v-avatar>
           <div class="ml-2 text-truncate">{{ item.user.name }}</div>
         </div>
-        <div class="flex-shrink-0 ml-4">{{ getDate(item.date) }}</div>
+        <div class="flex-shrink-0 ml-4">{{ getDateStr(item.date) }}</div>
       </v-layout>
     </v-card-subtitle>
     <!-- コメント -->
@@ -62,6 +62,7 @@ import { defineComponent } from '@vue/composition-api';
 import { mdiChevronRight, mdiDotsVertical, mdiShareVariant } from '@mdi/js';
 import useRouter from '@/composables/useRouter';
 import { NoteType } from '@/types/NoteType';
+import { getDateStr } from '@/utils/functions';
 
 export default defineComponent({
   props: {
@@ -70,11 +71,6 @@ export default defineComponent({
   setup(props) {
     // アイコン
     const icons = { mdiChevronRight, mdiDotsVertical, mdiShareVariant };
-
-    // 投稿日の文字列取得
-    const getDate = (date: Date) => {
-      return date.toISOString().split('T')[0].replaceAll('-', '/');
-    };
 
     // カードクリック時処理
     const { router } = useRouter();
@@ -85,7 +81,7 @@ export default defineComponent({
       });
     };
 
-    return { ...icons, getDate, onClick };
+    return { ...icons, onClick, getDateStr };
   },
 });
 </script>
