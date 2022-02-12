@@ -10,6 +10,12 @@ const routes: Array<RouteConfig> = [
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
   },
   {
+    path: '/note/:id',
+    name: 'Note',
+    props: true,
+    component: () => import(/* webpackChunkName: "note" */ '../views/Note.vue'),
+  },
+  {
     path: '/notification',
     name: 'Notification',
     component: () =>
