@@ -24,6 +24,14 @@
           <div class="flex-shrink-0 ml-4">{{ getDate(item.date) }}</div>
         </v-layout>
       </v-layout>
+      <v-breadcrumbs :items="item.routes">
+        <template #divider>
+          <v-icon>{{ mdiChevronRight }}</v-icon>
+        </template>
+        <template #item="{ item }">
+          <span>{{ item.name }}</span>
+        </template>
+      </v-breadcrumbs>
       <div class="mt-4 mb-16">{{ item.comment }}</div>
       <v-layout justify-center>
         <!-- todo: APIつかう -->
@@ -42,7 +50,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
-import { mdiDotsVertical, mdiShareVariant } from '@mdi/js';
+import { mdiChevronRight, mdiDotsVertical, mdiShareVariant } from '@mdi/js';
 import NoteComment from '@/components/note/NoteComment.vue';
 import { getDateStr } from '@/utils/functions';
 
@@ -51,7 +59,7 @@ export default defineComponent({
   props: ['data'],
   setup(props) {
     // アイコン
-    const icons = { mdiDotsVertical, mdiShareVariant };
+    const icons = { mdiChevronRight, mdiDotsVertical, mdiShareVariant };
 
     // ノートの情報を取得
     const item = JSON.parse(props.data);
