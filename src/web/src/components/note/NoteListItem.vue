@@ -94,7 +94,6 @@ export default defineComponent({
   min-width: 0;
 }
 .description {
-  height: 67px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
