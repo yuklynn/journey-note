@@ -27,7 +27,11 @@ export type NoteType = {
  * 経路1件の型
  * todo: GoogleMapの型
  * @property name - 場所の名前
+ * @property lat - 経度
+ * @property lng - 緯度
  */
 export type LocationType = {
   name: string;
+  lat: string;
+  lng: string;
 };
