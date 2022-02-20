@@ -25,7 +25,16 @@
         </v-layout>
       </v-layout>
       <div class="mt-4 mb-16">{{ item.comment }}</div>
-      <div>けいろ</div>
+      <v-layout justify-center>
+        <!-- todo: APIつかう -->
+        <iframe
+          src="http://maps.google.co.jp/maps?q=35.5035268,138.9876278&output=embed&t=m&z=16&hl=ja"
+          frameborder="0"
+          scrolling="no"
+          width="600"
+          height="450"
+        ></iframe>
+      </v-layout>
     </v-container>
     <note-comment />
   </div>
